@@ -1,0 +1,9 @@
+//=====================
+// base/_function.scss
+// ====================
+
+// remをpxのように扱う関数
+$baseFontSize: 16;
+@function rem($pixels) {
+  @return $pixels / $baseFontSize * 1rem;
+}

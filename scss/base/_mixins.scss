@@ -1,0 +1,32 @@
+@use "function" as f;
+@use "variables" as v;
+
+//=====================
+// base/_typography.scss
+// ====================
+
+// --------------------
+// font
+// --------------------
+@mixin font(
+  $weight: 500,
+  $size: f.rem(20),
+  $height: 1.1,
+  $space: 0,
+  $clr: v.$light-black
+) {
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $height;
+  letter-spacing: $space;
+  color: $clr;
+}
+
+// --------------------
+// mediaquery
+// --------------------
+@mixin mq($breakpoint) {
+  @media #{map-get(v.$breakpoint, $breakpoint)} {
+    @content;
+  }
+}

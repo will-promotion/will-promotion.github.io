@@ -1,0 +1,275 @@
+@use "function" as f;
+@use "mixins" as m;
+@use "variables" as v;
+
+@import url("https://fonts.googleapis.com/css2?family=Spectral+SC:wght@500&display=swap");
+
+/*=====================
+書式の設定
+=====================*/
+
+body {
+  font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium",
+    "游ゴシック", "Yu Gothic", sans-serif;
+}
+
+h2 {
+  font-family: "Arial", sans-serif;
+  @include m.font($size: f.rem(40), $clr: v.$light-gray);
+
+  // max-width 767px
+  @include m.mq(sm) {
+    font-size: f.rem(28);
+  }
+}
+
+h3 {
+  @include m.font($size: f.rem(30));
+
+  // max-width 767px
+  @include m.mq(sm) {
+    font-size: f.rem(24);
+  }
+}
+
+p,
+li {
+  @include m.font($height: 1.8);
+
+  @include m.mq(sm) {
+    font-size: f.rem(18);
+  }
+}
+
+/*--------------------
+ヘッダー
+--------------------*/
+.header {
+  h1 {
+    font-family: "Spectral SC", serif;
+    @include m.font($size: f.rem(30), $height: 2, $clr: v.$light-gray);
+  }
+
+  a {
+    font-family: "Arial", sans-serif;
+    @include m.font($weight: 700, $size: f.rem(12), $clr: v.$light-gray);
+
+    // max-width 960px
+    @include m.mq(md) {
+      font-size: f.rem(18);
+    }
+  }
+}
+
+/*--------------------
+フッター
+--------------------*/
+.footer {
+  a {
+    font-family: "Arial", sans-serif;
+    @include m.font($weight: 700, $size: f.rem(12), $height: 2, $clr: v.$white);
+  }
+
+  small {
+    @include m.font($weight: 400, $size: f.rem(12), $height: 1, $clr: v.$white);
+  }
+}
+
+/*--------------------
+ボタン
+--------------------*/
+.button {
+  font-family: "Arial", sans-serif;
+  @include m.font($size: f.rem(15), $clr: v.$deep-brown);
+}
+
+/*--------------------
+トップページ
+--------------------*/
+.fv {
+  span {
+    font-family: "Times New Roman", serif;
+    @include m.font($weight: 400, $size: f.rem(60), $clr: v.$dark-black);
+  }
+
+  .fv__large {
+    font-weight: 700;
+    font-size: f.rem(80);
+  }
+
+  // max-width 960px
+  @include m.mq(md) {
+    span {
+      font-size: f.rem(40);
+    }
+
+    .fv__large {
+      font-size: f.rem(60);
+    }
+  }
+}
+
+.intro {
+  & > span {
+    font-family: "Spectral SC", serif;
+    font-size: f.rem(43);
+  }
+
+  h3 {
+    @include m.font($height: 1.8);
+  }
+}
+
+.member {
+  p {
+    @include m.font($size: f.rem(30), $height: f.rem(35));
+
+    span {
+      font-size: f.rem(20);
+    }
+  }
+}
+
+/*--------------------
+紹介ページ
+--------------------*/
+.will-act,
+.pg-act {
+  h3 {
+    @include m.font($size: f.rem(25), $clr: v.$dark-black);
+  }
+
+  p {
+    font-weight: 400;
+  }
+
+  a {
+    font-weight: 500;
+    color: rgb(70, 145, 216);
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}
+
+/*--------------------
+コースページ
+--------------------*/
+.courses {
+  li {
+    font-weight: 700;
+    line-height: 2;
+  }
+
+  &__text-box {
+    @include m.font($size: f.rem(25), $height: 1.6);
+  }
+
+  // max-width 767px
+  @include m.mq(sm) {
+    h3 {
+      font-size: f.rem(24);
+    }
+
+    p {
+      font-size: f.rem(16);
+      line-height: 1.6;
+    }
+  }
+}
+
+.modal {
+  h3 {
+    @include m.font($size: f.rem(24));
+  }
+
+  p {
+    @include m.font($size: f.rem(16), $height: 1.6);
+  }
+
+  li {
+    @include m.font($size: f.rem(16), $height: 1.8);
+  }
+}
+
+/*--------------------
+イベントページ
+--------------------*/
+.events {
+  p {
+    font-family: "Arial", sans-serif;
+  }
+
+  // max-width 767px
+  @include m.mq(sm) {
+    h3 {
+      font-size: f.rem(22);
+    }
+  }
+}
+
+/*--------------------
+入会ページ
+--------------------*/
+.join {
+  h4 {
+    @include m.font($size: f.rem(25), $height: 1.6);
+  }
+
+  li,
+  a {
+    font-family: "Arial", sans-serif;
+    @include m.font($weight: 400, $height: 2);
+  }
+
+  a {
+    color: v.$pale-green;
+
+    &:hover {
+      color: v.$light-pink;
+    }
+  }
+
+  // max-width 767px
+  @include m.mq(sm) {
+    h4 {
+      font-size: f.rem(20);
+    }
+
+    li {
+      font-size: f.rem(18);
+    }
+  }
+}
+
+/*--------------------
+お問い合わせページ
+--------------------*/
+.contact {
+  h3 {
+    @include m.font($size: f.rem(22));
+  }
+
+  li {
+    @include m.font($size: f.rem(18), $height: 2);
+  }
+}
+
+.faq {
+  &__icon {
+    line-height: f.rem(45);
+
+    &-question {
+      color: v.$white;
+    }
+  }
+
+  &__answer-text {
+    font-size: f.rem(16);
+
+    &-sub {
+      font-size: f.rem(14);
+    }
+  }
+}
