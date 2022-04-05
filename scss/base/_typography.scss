@@ -158,12 +158,16 @@ li {
 --------------------*/
 .courses {
   li {
-    font-weight: 700;
     line-height: 2;
+    font-size: f.rem(16);
   }
 
   &__text-box {
     @include m.font($size: f.rem(25), $height: 1.6);
+  }
+
+  dt {
+    font-weight: 500;
   }
 
   // max-width 767px

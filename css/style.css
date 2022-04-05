@@ -580,8 +580,8 @@ li {
 コースページ
 --------------------*/
 .courses li {
-  font-weight: 700;
   line-height: 2;
+  font-size: 1rem;
 }
 .courses__text-box {
   font-weight: 500;
@@ -589,6 +589,9 @@ li {
   line-height: 1.6;
   letter-spacing: 0;
   color: #41475a;
+}
+.courses dt {
+  font-weight: 500;
 }
 @media screen and (max-width: 767px) {
   .courses h3 {
