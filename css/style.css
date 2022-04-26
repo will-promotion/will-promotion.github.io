@@ -1542,6 +1542,34 @@ headerの設定
 .pg-act__card:nth-of-type(4) {
   border: 2px solid #d7f484;
 }
+.pg-act__button {
+  margin: 80px auto 0;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  text-align: center;
+}
+.pg-act__button a {
+  display: block;
+  padding: 20px 40px;
+  border: 1px solid #644529;
+  border-radius: 50px;
+  transition: all 500ms;
+  color: #644529;
+}
+.pg-act__button a:hover {
+  background-color: #644529;
+  color: #ffffff;
+}
+.pg-act__button span {
+  display: inline-block;
+  margin-left: 20px;
+}
+@media screen and (max-width: 374px) {
+  .pg-act__button span {
+    display: none;
+  }
+}
 
 /*=====================
 イベントページの設定

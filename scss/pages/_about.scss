@@ -106,4 +106,32 @@
       border: 2px solid v.$light-green;
     }
   }
+
+  &__button {
+    margin: 80px auto 0;
+    width: fit-content;
+    text-align: center;
+
+    a {
+      display: block;
+      padding: 20px 40px;
+      border: 1px solid v.$deep-brown;
+      border-radius: 50px;
+      transition: all 500ms;
+      color: v.$deep-brown;
+
+      &:hover {
+        background-color: v.$deep-brown;
+        color: v.$white;
+      }
+    }
+
+    span {
+      display: inline-block;
+      margin-left: 20px;
+      @include m.mq(xs) {
+        display: none;
+      }
+    }
+  }
 }
