@@ -21,6 +21,11 @@ headerの設定
     }
   }
 
+  .header__icon {
+    font-family: "Spectral SC", serif;
+      @include m.font($size: f.rem(30), $height: 2, $clr: v.$light-gray);
+  }
+
   a {
     position: relative;
 
