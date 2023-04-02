@@ -1,0 +1,91 @@
+---
+import { FAQ } from "../constants";
+---
+<div class="faq">
+  <h3>よくある質問</h3>
+  {
+    FAQ.map(({ question, answer, subAnswer }) => (
+      <dl>
+        <dt class="faq__question">
+          <span class="faq__icon faq__icon-question">Q</span>
+          <span class="faq__question-txt">{question}</span>
+        </dt>
+        <dl class="faq__answer">
+          <span class="faq__icon faq__icon-answer">A</span>
+          <div class="faq__answer-body">
+            <p class="faq__answer-text">{answer}</p>
+            <p class="faq__answer-text-sub">{subAnswer}</p>
+          </div>
+        </dl>
+      </dl>
+    ))
+  }
+</div>
+
+<style>
+  .faq {
+    margin: 80px auto 100px;
+    max-width: 1140px;
+  }
+
+  .faq__question, .faq__answer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 45px;
+    padding-left: 60px;
+  }
+
+  .faq__question {
+    margin-top: 50px;
+    margin-bottom: 15px;
+  }
+
+  .faq__question-text {
+    padding-top: 12px;
+  }
+
+  .faq__answer {
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .faq__icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 2.8125rem;
+  }
+
+  .faq__icon-question {
+    background-color: #e25c00;
+    color: #ffffff;
+  }
+
+  .faq__icon-answer {
+    background-color: #efefef;
+  }
+
+  .faq__answer-body {
+    padding-top: 12px;
+  }
+
+  .faq__answer-body> :last-child {
+    margin-bottom: 0;
+  }
+
+  .faq__answer-text {
+    margin-bottom: 10px;
+    font-size: 1rem;
+  }
+
+  .faq__answer-text-sub {
+    margin-bottom: 20px;
+    font-size: 0.875rem;
+  }
+</style>
