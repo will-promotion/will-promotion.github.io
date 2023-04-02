@@ -1,0 +1,223 @@
+---
+import { PG_ACT,WILL_ACT } from '../constants';
+import Layout from '../layouts/Layout.astro';
+import '../styles/global.css';
+
+const title = "活動紹介"
+---
+
+<Layout title={title}>
+  <section class="will-act">
+    <h2>WILLの活動紹介</h2>
+    <div class="will-act__container">
+      {
+        WILL_ACT.map(({title, content, image, alt}) => (
+          <div class="will-act__card">
+            <div class="will-act__text-box">
+              <h3>{title}</h3>
+              <p>{content}</p>
+              <div class="will-act__img">
+                <img src={image} alt={alt} />
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="pg-act">
+    <h2>PlayGroundの活動紹介</h2>
+    <div class="pg-act__container">
+      {
+        PG_ACT.map(({title, content, image, alt}) => (
+          <div class="pg-act__card">
+            <div class="pg-act__text-box">
+              <h3>{title}</h3>
+              <p>{content}</p>
+              <div class="pg-act__img">
+                <img src={image} alt={alt}/>
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+
+    <div class="pg-act__button">
+      <a
+        href="https://www.playground-i.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+        >PlayGroundについて詳しく<span>&rang;&rang;</span></a
+      >
+    </div>
+  </section>
+</Layout>
+
+<style>
+  h2 {
+    margin-bottom: 80px;
+    text-align: center;
+  }
+
+  h3 {
+    font-weight: 500;
+    font-size: 1.5625rem;
+    line-height: 1.1;
+    letter-spacing: 0;
+    color: #414141;
+    margin-bottom: 35px;
+  }
+
+  p {
+    font-weight: 400;
+  }
+
+  a {
+    font-weight: 500;
+  }
+
+  a:hover {
+    opacity: 0.8;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  .will-act,
+  .pg-act {
+    margin-top: 150px;
+    padding: 0 4%;
+  }
+
+  .pg-act {
+    margin-top: 200px;
+    margin-bottom: 100px;
+  }
+
+  .will-act__container,
+  .pg-act__container {
+    max-width: 1140px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin: auto;
+    margin-bottom: 50px;
+  }
+
+  .will-act__card,
+  .pg-act__card {
+    display: flex;
+    justify-content: space-between;
+    max-width: 545px;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0px 8px 16px -2px rgba(10, 10, 10, 0.1), 0px 0px 10px 10px rgba(10, 10, 10, 0.02);
+  }
+
+  .will-act__card:nth-of-type(1),
+  .pg-act__card:nth-of-type(1) {
+    border: 2px solid #f7c8da;
+  }
+
+  .will-act__card:nth-of-type(2),
+  .pg-act__card:nth-of-type(2) {
+    border: 2px solid #b5c97c;
+  }
+
+  .will-act__card:nth-of-type(3),
+  .pg-act__card:nth-of-type(3) {
+    border: 2px solid #fde7a8;
+  }
+
+  .will-act__card:nth-of-type(4),
+  .pg-act__card:nth-of-type(4) {
+    border: 2px solid #f5b8b5;
+  }
+
+  .will-act__img,
+  .pg-act__img {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin: auto;
+  }
+
+  .pg-act__img {
+    width: 320px;
+  }
+
+  .pg-act__card:nth-of-type(1) {
+    border: 2px solid #b5c97c;
+  }
+
+  .pg-act__card:nth-of-type(2) {
+    border: 2px solid #ffc0d1;
+  }
+
+  .pg-act__card:nth-of-type(3) {
+    border: 2px solid #fde7a8;
+  }
+
+  .pg-act__card:nth-of-type(4) {
+    border: 2px solid #d7f484;
+  }
+
+  .pg-act__button {
+    margin: 80px auto 0;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    text-align: center;
+  }
+
+  .pg-act__button a {
+    display: block;
+    padding: 20px 40px;
+    border: 1px solid #644529;
+    border-radius: 50px;
+    transition: all 500ms;
+    color: #644529;
+  }
+
+  .pg-act__button a:hover {
+    background-color: #644529;
+    color: #ffffff;
+  }
+
+  .pg-act__button span {
+    display: inline-block;
+    margin-left: 20px;
+  }
+
+  @media screen and (max-width: 767px) {
+
+    .will-act__img,
+    .pg-act__img {
+      max-width: 260px;
+    }
+  }
+
+  @media screen and (max-width: 374px) {
+
+    .will-act__img,
+    .pg-act__img {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    .pg-act__img {
+      max-width: 260px;
+    }
+  }
+
+  @media screen and (max-width: 374px) {
+    .pg-act__button span {
+      display: none;
+    }
+  }
+</style>

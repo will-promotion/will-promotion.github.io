@@ -1,0 +1,110 @@
+---
+import { EVENTS } from '../constants';
+import Layout from '../layouts/Layout.astro';
+import '../styles/global.css';
+
+const title = "新歓イベント"
+---
+
+<Layout title={title}>
+  <section class="events">
+    <div class="events__outer">
+      <h2>新歓イベント</h2>
+    </div>
+    <div class="events__wrapper">
+      {
+        EVENTS.map(({title, content, date, image, alt}) => (
+          <div class="events__container">
+            <div class="events__item">
+              <h3>{title}</h3>
+              <p>{content}</p>
+              <p>説明会日程
+                <ul>
+                  {
+                    date.map(item => (<li>・{item}</li>))
+                  }
+                </ul>
+              </p>
+              <div class="events__img">
+                <img src={image} alt={alt} />
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+</Layout>
+
+<style>
+  p {
+    margin-top: 35px;
+    font-family: "Arial", sans-serif;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  .events__outer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 325px;
+    background-image: url(/images/bgi_events_sky.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .events__wrapper {
+    padding: 0 4%;
+  }
+
+  .events__container {
+    max-width: 1140px;
+    margin: 200px auto 0;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    gap: 0 40px;
+  }
+
+  .events__container:first-child {
+    margin-top: 130px;
+  }
+
+  .events__container:last-child {
+    margin-bottom: 100px;
+  }
+
+  .events__container:nth-of-type(2n) {
+    flex-direction: row-reverse;
+  }
+
+  .events__item {
+    max-width: 500px;
+  }
+
+  .events__img {
+    max-width: 500px;
+    min-width: 280px;
+  }
+
+  @media screen and (max-width: 960px) {
+    .events__container {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .events__container:nth-of-type(2n) {
+      flex-direction: column;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    h3 {
+      font-size: 1.375rem;
+    }
+  }
+</style>
