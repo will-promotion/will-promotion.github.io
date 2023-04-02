@@ -12,8 +12,8 @@ const { title, description } = Astro.props;
 const titleContent =
   title === undefined ? SITE_TITLE : `${title} - ${SITE_TITLE}`;
 const siteDescription = description ?? SITE_DESCRIPTION;
-const url = "https://will-promotion.github.io/";
-const ogImage = new URL("/will-promotion.github.io/images/will-ogp.jpg", Astro.url);
+const url = "https://";
+const ogImage = new URL("/images/will-ogp.jpg", Astro.url);
 ---
 
 <!DOCTYPE html>
@@ -33,7 +33,7 @@ const ogImage = new URL("/will-promotion.github.io/images/will-ogp.jpg", Astro.u
     <meta property="twitter:card" content="summary_large_image" />
 
     <title>{titleContent}</title>
-    <link rel="shortcut icon" href="/will-promotion.github.io/will-fav.ico" type="image/ico" />
+    <link rel="shortcut icon" href="/will-fav.ico" type="image/ico" />
     <script src="https://kit.fontawesome.com/e3d049ce0d.js" crossorigin="anonymous"></script>
   </head>
   <body>
