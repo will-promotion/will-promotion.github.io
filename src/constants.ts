@@ -293,7 +293,7 @@ export const COURSES = [
 ]
 
 // コース修了者の声
-export const VOICES = [
+export const COURSE_VOICES = [
   {
     image: "images/courses/courses_dog.png",
     alt: "犬のアイコン",

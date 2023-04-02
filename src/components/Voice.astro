@@ -1,11 +1,11 @@
 ---
-import { VOICES } from "../constants";
+import { COURSE_VOICES } from "../constants";
 ---
 
 <section class="voice">
   <h2>修了者の声</h2>
   {
-    VOICES.map(({ image, alt, course, text1, text2 }) => (
+    COURSE_VOICES.map(({ image, alt, course, text1, text2 }) => (
       <div class="voice__container">
         <div class="voice__img">
           <img src={image} alt={alt} />
