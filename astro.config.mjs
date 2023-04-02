@@ -1,6 +1,7 @@
 import { defineConfig } from 'astro/config';
+import netlify from '@astrojs/netlify/functions';
 
 export default defineConfig({
-  site: 'https://will-promotion.github.io',
-  base: '/will-promotion.github.io',
+  output: 'server',
+  adapter: netlify(),
 });
