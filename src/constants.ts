@@ -143,7 +143,7 @@ export const departmentOptions: ChartOptions<"doughnut"> = {
     legend: legend,
     tooltip: tooltip,
   }
-}
+};
 
 export const CHART_DATA = [
   {
@@ -170,7 +170,7 @@ export const CHART_DATA = [
     data: departmentData,
     options: departmentOptions,
   },
-]
+];
 
 // WILLの活動紹介
 export const WILL_ACT = [
@@ -198,7 +198,7 @@ export const WILL_ACT = [
     image: "/will-promotion.github.io/images/about/about_will_operation.svg",
     alt: "WILL運営部のイメージ画像",
   },
-]
+];
 
 // PGの活動紹介
 export const PG_ACT = [
@@ -226,7 +226,7 @@ export const PG_ACT = [
     image: "/will-promotion.github.io/images/about/about_hackathon.svg",
     alt: "ハッカソンのイメージ画像",
   },
-]
+];
 
 // コース紹介
 export const COURSES = [
@@ -290,7 +290,7 @@ export const COURSES = [
     modalLearnings: ["暗号に関する知識ハッシュ関数, 公開鍵暗号, デジタル署名, ブロックチェーン理論", "Ethereum(EIP-1559)", "Dapps", "Hardhat, chai, ethers", "セキュリティのベストプラクティス", "Solidity, JavaScript/TypeScript", "ERC20, ERC721, OpenZeppelin, Uniswap v2"],
     modalContent: "Uniswapと呼ばれるプロトコルを用いたERC20-WETH間のスワップDappsを開発します。さらにmochaによるテストまでが課題内容に含まれます。",
   },
-]
+];
 
 // コース修了者の声
 export const COURSE_VOICES = [
@@ -315,7 +315,7 @@ export const COURSE_VOICES = [
     text1: "いつも自分が使っているiPhoneアプリがどのような仕組みで動いているかを詳しく知ることができた",
     text2: "どの端末サイズでもデザインが崩れないようなUIを組むのが大変だった",
   },
-]
+];
 
 // 新歓
 export const EVENTS = [
@@ -340,7 +340,7 @@ export const EVENTS = [
     image: "/will-promotion.github.io/images/events/events_offline.svg",
     alt: "ハンズオン | データサイエンス体験のイメージ画像",
   },
-]
+];
 
 // FAQ
 export const FAQ = [
@@ -359,4 +359,4 @@ export const FAQ = [
     answer: "可能です！",
     subAnswer: "可能ですが、PlayGroundでのコース学習中や案件にアサインされている期間は、優先的に時間を割いていただく必要があります。（目安：10時間/週）",
   },
-]
+];
