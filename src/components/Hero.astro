@@ -28,7 +28,6 @@
     <span class="hero-22">s</span>
     <span class="hero-23">!</span>
   </div>
-  <canvas></canvas>
 </section>
 
 
@@ -43,7 +42,7 @@
     margin: auto;
   }
 
-  span {
+  .hero span {
     font-family: "Times New Roman", serif;
     font-weight: 400;
     font-size: 3.75rem;
@@ -64,7 +63,7 @@
   }
 
   @media screen and (min-width: 640px) and (max-width: 865px) {
-    span {
+    .hero span {
        font-size: calc(2.5rem + ((1vw - 0.4rem) * 8.8889));
       min-height: 0vw;
     }
@@ -76,7 +75,7 @@
   }
 
   @media screen and (max-width: 639px) {
-    span {
+    .hero span {
       font-size: min(max(2.5rem, calc(2.5rem + ((1vw - 0.2125rem) * 3.8095))), 3.75rem);
       min-height: 0vw;
     }
