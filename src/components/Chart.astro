@@ -1,0 +1,143 @@
+---
+import { CHART_DATA } from "../constants";
+---
+<section class="member">
+  <h2>構成人数・学部</h2>
+  <div class="member__container">
+    {
+      CHART_DATA.map(({ title, name }) => (
+        <div class="member__item">
+          <h3>{title}</h3>
+          <p class={`member__${name}`}><span>全体</span>46<span>人</span></p>
+          <div class="member__canvas">
+            <canvas id={name} width="450" height="225"></canvas>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</section>
+
+<style>
+  .member {
+    margin: 100px auto 20px;
+    padding: 0 4%;
+  }
+
+  .member h2 {
+    max-width: 1140px;
+    margin: auto;
+  }
+
+  .member p {
+    font-weight: 500;
+    font-size: 2.4rem;
+    line-height: 2.3rem;
+    letter-spacing: 0;
+    color: #41475a;
+  }
+
+  .member p span {
+    font-size: 1.5rem;
+  }
+
+  .member span:first-child {
+    display: block;
+    text-align: center;
+  }
+
+  .member__container {
+    max-width: 1040px;
+    margin: auto;
+    margin-top: 40px;
+    overflow: auto;
+    padding-bottom: 200px;
+  }
+
+  .member__item {
+    position: relative;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin-bottom: -150px;
+  }
+
+  .member__item:nth-child(2n) {
+    margin: 0 0 0 auto;
+    margin-bottom: -150px;
+  }
+
+  .member__item p {
+    position: absolute;
+    top: 210px;
+    left: 130px;
+  }
+
+  .member__years {
+    left: 150px;
+  }
+
+  .member__gender {
+    left: 145px;
+  }
+
+  .member__university {
+    left: 135px;
+  }
+
+  .member__department {
+    left: 95px;
+  }
+
+  .member__canvas {
+    position: relative;
+    width: 450px;
+  }
+
+  @media screen and (max-width: 940px) {
+    .member__container {
+      padding-bottom: 100px;
+    }
+
+    .member__item {
+      margin-bottom: -50px;
+    }
+
+    .member__item:nth-child(2n) {
+      margin-bottom: -50px;
+    }
+  }
+</style>
+
+<script>
+  import Chart from "chart.js/auto";
+  import { departmentData,departmentOptions,genderData,options,universityData,yearsData } from "../constants";
+
+  const years = document.getElementById("years") as HTMLCanvasElement;
+  new Chart(years, {
+    type: "doughnut",
+    data: yearsData,
+    options: options,
+  });
+
+  const gender = document.getElementById("gender") as HTMLCanvasElement;
+  new Chart(gender, {
+    type: "doughnut",
+    data: genderData,
+    options: options,
+  });
+
+  const university = document.getElementById("university") as HTMLCanvasElement;
+  new Chart(university, {
+    type: "doughnut",
+    data: universityData,
+    options: options,
+  });
+
+  const department = document.getElementById("department") as HTMLCanvasElement;
+  new Chart(department, {
+    type: "doughnut",
+    data: departmentData,
+    options: departmentOptions,
+  });
+</script>

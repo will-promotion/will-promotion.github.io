@@ -1,0 +1,102 @@
+---
+import { PAGE_LINKS } from "../constants";
+---
+
+<footer class="footer">
+  <nav>
+    <ul>
+      {
+      PAGE_LINKS.map(({ enTitle, href }) => (
+          <li>
+            <a href={href}>{enTitle}</a>
+          </li>
+        ))
+      }
+      <li>
+        <a
+          href="https://twitter.com/pgwu_info"
+          target="_blank"
+          rel="noopener noreferrer"
+          >FOLLOW US</a
+        >
+      </li>
+    </ul>
+  </nav>
+  <p><small>&copy;2023 WASEDA IT Leader Lab</small></p>
+</footer>
+
+<style>
+  .footer {
+    background-color: #646770;
+    padding: 15px 4% 30px;
+  }
+
+  .footer nav ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0 40px;
+  }
+
+  .footer li:hover {
+    opacity: 0.8;
+  }
+
+  .footer li:last-child::after {
+    content: "\f099";
+    font-family: "Font Awesome 5 Brands";
+    display: inline-block;
+    margin-left: 4px;
+    color: #ffffff;
+  }
+
+  .footer p {
+    margin: 30px auto 0;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+
+  .footer small {
+    font-weight: 400;
+    font-size: 0.75rem;
+    line-height: 1;
+    letter-spacing: 0;
+    color: #ffffff;
+  }
+
+  .footer a {
+    position: relative;
+    font-family: "Arial", sans-serif;
+    font-weight: 700;
+    font-size: 0.75rem;
+    line-height: 2;
+    letter-spacing: 0;
+    color: #ffffff;
+  }
+
+  .footer a:hover::before {
+    content: "";
+    position: absolute;
+    left: 30%;
+    top: 0;
+    border: 1px solid #333;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    opacity: 1;
+    -webkit-animation: 1s circleanime forwards;
+    animation: 1s circleanime forwards;
+  }
+
+  @keyframes circleanime {
+    0% {
+      transform: scale(0);
+    }
+
+    100% {
+      transform: scale(2);
+      opacity: 0;
+    }
+  }
+</style>

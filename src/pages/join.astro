@@ -1,0 +1,263 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '../styles/global.css';
+
+const title = "入会方法"
+---
+
+<Layout title={title}>
+  <section class="join">
+    <div class="join__outer">
+      <h2>入会について</h2>
+    </div>
+    <div class="join__text-box">
+      <p>
+        WILLでは、年間を通して一緒に学び成長するメンバーを募集しています。大学や学部・学年、プログラミング経験の有無などは基本的には問いません。少しでも興味があれば、ぜひ下を参考に入会をご検討ください！
+      </p>
+    </div>
+
+    <div class="join__text-wrapper">
+      <h3>入会フロー</h3>
+    </div>
+    <div class="join__container">
+      <div class="join__box">
+        <div class="join__card">
+          <h4>オンライン説明会<br />（所要時間：30~60分）</h4>
+          <p>
+            ZOOMにて活動内容、入会方法についての説明会を行っています。下の「説明会参加フォーム」から応募の上こちらにご参加ください！
+          </p>
+        </div>
+        <div class="join__img">
+          <img src="images/join_arrow.svg" alt="矢印" />
+        </div>
+        <div class="join__card">
+          <h4>セットアップ<br />（所要時間：90分）</h4>
+          <p>
+            説明会後、入部希望の方向けにセットアップサポート（90分前後）も行いますので、ぜひ予定を開けてご参加ください！
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="join__wrapper">
+      <div class="join__btn-box">
+        <h3>新歓説明会・セットアップ日程</h3>
+        <a href="/events">詳細は新歓イベントページへ</a>
+      </div>
+
+      <div class="join__btn-box">
+        <h3>説明会参加フォーム</h3>
+        <a
+        href="https://forms.gle/eVtZjEeN4FB15f1aA"
+        target="_blank"
+        rel="noopener noreferrer"
+        >説明会参加フォームはこちら</a
+        >
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  h2 {
+    text-align: center;
+  }
+
+
+  h4 {
+    font-weight: 700;
+    font-size: 1.4rem;
+    line-height: 1.6;
+    letter-spacing: 0;
+    color: #41475a;
+  }
+
+  ul {
+    margin-top: 35px;
+  }
+
+  li, a {
+    font-family: "Arial", sans-serif;
+    font-weight: 400;
+    font-size: 1.25rem;
+    line-height: 2;
+    letter-spacing: 0;
+    color: #41475a;
+  }
+
+  a {
+    color: #b5c97c;
+    display: block;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin-top: 35px;
+    padding: 1.5% 2%;
+    border: 2px solid #b5c97c;
+    position: relative;
+    transition: 0.7s;
+  }
+
+  a:hover {
+    color: #f7c8da;
+    border: 2px solid transparent;
+  }
+
+  a:hover::before, a:hover::after {
+    transform: scale(1);
+  }
+
+  a::before, a::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    transform: scale(0);
+    transition: 0.7s;
+  }
+
+  a::before {
+    border-bottom: 2px solid #f7c8da;
+    border-left: 2px solid #f7c8da;
+    transform-origin: 100% 0%;
+  }
+
+  a::after {
+    border-top: 2px solid #f7c8da;
+    border-right: 2px solid #f7c8da;
+    transform-origin: 0% 100%;
+  }
+
+  .join {
+    margin-bottom: 100px;
+    padding: 0 4%;
+  }
+
+  .join__outer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    min-height: 325px;
+    background-image: url(/images/bgi_join_sky.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+
+  .join__text-box {
+    max-width: 980px;
+    margin: 40px auto 0;
+  }
+
+  .join__text-wrapper {
+    max-width: 1140px;
+    margin: 60px auto 0;
+  }
+
+  .join__wrapper {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1140px;
+    margin: 60px auto 0;
+  }
+
+  .join__btn-box {
+    flex-basis: 35%;
+  }
+
+  .join__btn-box > h3 {
+    font-size: 1.5rem;
+  }
+
+  .join__btn-box > p {
+    text-align: center;
+  }
+
+  .join__container {
+    overflow-x: hidden;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    margin-top: 20px;
+    padding: 60px 4%;
+    background: linear-gradient(0deg, #f6f6f9, #f6f6f9), rgba(255, 255, 255, 0.45);
+  }
+
+  .join__box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1140px;
+    margin: auto;
+  }
+
+  .join__card {
+    padding: 25px;
+    background-color: #ffffff;
+    max-width: 480px;
+    min-width: 200px;
+    min-height: 215px;
+    box-shadow: 0px 5px 12px #cad4e2, -6px -6px 12px #ffffff;
+    border-radius: 15px;
+  }
+
+  .join__card p {
+    margin-top: 20px;
+  }
+
+  @media screen and (max-width: 1080px) {
+    .join__box {
+      flex-direction: column;
+      gap: 20px 0;
+    }
+
+    .join__img {
+      width: -webkit-fit-content;
+      width: -moz-fit-content;
+      width: fit-content;
+      transform: rotate(90deg);
+    }
+
+    .join__wrapper {
+      flex-direction: column;
+      align-items: center;
+      gap: 40px 0;
+    }
+
+    .join__btn-box {
+      width: 100%;
+      text-align: center;
+    }
+
+    a {
+      margin: 35px auto;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    br {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    p {
+      margin-top: 15px;
+    }
+
+    h4 {
+      font-size: 1.25rem;
+    }
+
+    li {
+      font-size: 1.125rem;
+    }
+  }
+</style>
