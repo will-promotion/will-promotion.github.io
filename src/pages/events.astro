@@ -13,21 +13,26 @@ const title = "新歓イベント";
     </div>
     <div class="events__wrapper">
       {
-        EVENTS.map(({title, content, date, image, alt}) => (
+        EVENTS.map(({title, subTitle, content, dateName, date, formName, formUrl, image, alt}) => (
           <div class="events__container">
             <div class="events__item">
-              <h3>{title}</h3>
+              <h3>{title} <span>{subTitle}</span></h3>
               <p>{content}</p>
-              <p>説明会日程
-                <ul>
-                  {
-                    date.map(item => (<li>・{item}</li>))
-                  }
-                </ul>
-              </p>
-              <div class="events__img">
-                <img src={image} alt={alt} />
+              <p>{dateName}</p>
+              <ul>
+                {
+                  date.map(item => (<li>・{item}</li>))
+                }
+              </ul>
+              <div class="events__btn-box">
+                <p>{formName}</p>
+                <a href={formUrl} target="_blank" rel="noopener noreferrer">
+                  フォーム申込みはこちらから
+                </a>
               </div>
+            </div>
+            <div class="events__img">
+              <img src={image} alt={alt} />
             </div>
           </div>
         ))
@@ -37,6 +42,11 @@ const title = "新歓イベント";
 </Layout>
 
 <style>
+  h3 {
+    font-size: 1.7rem;
+    font-weight: 700;
+  }
+
   p {
     margin-top: 35px;
     font-family: "Arial", sans-serif;
@@ -44,6 +54,64 @@ const title = "新歓イベント";
 
   img {
     width: 100%;
+  }
+
+  li {
+    color: #4b555d;
+    font-weight: 700;
+  }
+
+  a {
+    font-family: "Arial", sans-serif;
+    font-weight: 400;
+    font-size: 1.25rem;
+    line-height: 2;
+    letter-spacing: 0;
+    color: #41475a;
+    color: #b5c97c;
+    display: block;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin-top: 10px;
+    padding: 1.5% 2%;
+    border: 2px solid #b5c97c;
+    position: relative;
+    transition: 0.7s;
+  }
+
+  a:hover {
+    color: #f7c8da;
+    border: 2px solid transparent;
+  }
+
+  a:hover::before, a:hover::after {
+    transform: scale(1);
+  }
+
+  a::before, a::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    transform: scale(0);
+    transition: 0.7s;
+  }
+
+  a::before {
+    border-bottom: 2px solid #f7c8da;
+    border-left: 2px solid #f7c8da;
+    transform-origin: 100% 0%;
+  }
+
+  a::after {
+    border-top: 2px solid #f7c8da;
+    border-right: 2px solid #f7c8da;
+    transform-origin: 0% 100%;
   }
 
   .events__outer {
@@ -83,7 +151,7 @@ const title = "新歓イベント";
   }
 
   .events__item {
-    flex-basis: 55%;
+    flex-basis: 60%;
   }
 
   .events__img {
@@ -91,7 +159,7 @@ const title = "新歓イベント";
     min-width: 280px;
   }
 
-  @media screen and (max-width: 1050px) {
+  @media screen and (max-width: 1090px) {
     .events__container {
       flex-direction: column;
       align-items: center;
@@ -102,13 +170,28 @@ const title = "新歓イベント";
     }
   }
 
+  @media screen and (min-width: 768px) {
+    br {
+      display: none;
+    }
+  }
+
   @media screen and (max-width: 767px) {
     .events__container {
       margin-top: 80px;
     }
 
     h3 {
-      font-size: 1.375rem;
+      font-size: 1.35rem;
+    }
+
+    span {
+      display: block;
+      margin-top: 10px;
+    }
+
+    li {
+      font-size: 1rem;
     }
   }
 </style>
