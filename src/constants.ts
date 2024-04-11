@@ -69,30 +69,30 @@ export const options: ChartOptions<"doughnut"> = {
 };
 
 export const yearsData: ChartData<'doughnut'> = {
-  labels: ["1年 15人", "2年 17人", "3年 13人", "4年 1人"],
+  labels: ["1年 2人", "2年 10人", "3年 21人", "4年 15人", "修士など 5名"],
   datasets: [
     {
-      data: [15, 17, 13, 1],
-      backgroundColor: ["#f4b3ca", "#b0da37", "#EB6EA5", "#AAB564"],
+      data: [2, 10, 21, 15, 5],
+      backgroundColor: ["#f4b3ca", "#b0da37", "#EB6EA5", "#AAB564", "#E4007F"],
     },
   ],
 };
 
 export const genderData: ChartData<'doughnut'> = {
-  labels: ["男子 36人", "女子 10人"],
+  labels: ["男子 38人", "女子 15人"],
   datasets: [
     {
-      data: [36, 10],
+      data: [38, 15],
       backgroundColor: ["#AACF52", "#F19EC2"],
     },
   ],
 };
 
 export const universityData: ChartData<'doughnut'> = {
-  labels: ["早稲田 45人", "他大 1人"],
+  labels: ["早稲田 52人", "他大 1人"],
   datasets: [
     {
-      data: [45, 1],
+      data: [52, 1],
       backgroundColor: ["#f5b8b5", "#b5c97c"],
     },
   ],
@@ -100,23 +100,24 @@ export const universityData: ChartData<'doughnut'> = {
 
 export const departmentData: ChartData<'doughnut'> = {
   labels: [
-    "国教 1人",
-    "社学 4人",
-    "教育 6人",
+    "国教 0人",
+    "社学 7人",
+    "教育 4人",
     "商 7人",
     "法 2人",
     "創造 4人",
-    "先進 0人",
-    "基幹 15人",
+    "先進 2人",
+    "基幹 19人",
     "人科 2人",
-    "文 1人",
-    "文構 1人",
-    "政経 2人",
+    "スポ科 0人",
+    "文 2人",
+    "文構 2人",
+    "政経 1人",
     "他大 1人"
   ],
   datasets: [
     {
-      data: [1, 4, 6, 7, 2, 4, 0, 15, 2, 1, 1, 2, 1],
+      data: [0, 7, 4, 7, 2, 4, 2, 19, 2, 0, 2, 2, 1, 1],
       backgroundColor: [
         "#be8096",
         "#f4b3ca",
@@ -324,7 +325,7 @@ export const EVENTS = [
     subTitle: "(オンライン)",
     content: "新歓期に開催する特別なオンライン説明会です！WILLの活動やビジョン、入会方法についてお話します！質問や相談なども受け付けているので、少しでも気になった方はぜひお申し込みください！説明会後、入部希望の方向けにセットアップサポート（90分前後）も行いますので、ぜひ予定を開けてご参加ください！",
     dateName: "説明会日程",
-    date: ["2023/04/05(水) 18:00-19:00 PlayGround/WILL合同", "2023/04/11(火) 15:00-15:30 WILL新歓", "2023/04/17(月) 15:00-15:30 WILL新歓", "2023/04/20(木) 18:00-19:00 PlayGround/WILL合同", "2023/05/01(月) 15:00-16:00 PlayGround/WILL合同"],
+    date: ["2024/04/11(木) 16:45-18:00 PlayGround/WILL合同", "2024/04/13(土) 10:00-10:30 WILL新歓", "2024/04/17(水) 12:45-14:00 PlayGround/WILL合同", "2024/04/27(土) 10:00-10:30 WILL新歓"],
     formName: "新歓説明会フォーム",
     formUrl: "https://t.co/xqtDzHaGZU",
     image: "/images/events/events_online.svg",
@@ -332,25 +333,25 @@ export const EVENTS = [
   },
   {
     title: "ハンズオン | Python基礎文法",
-    subTitle: "(オフライン)",
-    content: "AIなどに用いられるPythonという言語の未経験者向け体験会をオフラインで開催します‼プログラミングに興味がある方は気軽に参加してください‼ 実際にその場で会ってプログラミングを体験してみましょう!!(所要時間:100分程度)",
+    subTitle: "(オンライン)",
+    content: "AIや機械学習でも使われているPythonというプログラミング言語について、Chat-GPTも活用しながら実践できる初心者向け体験会をオンラインで開催します！プログラミングに興味がある方は気軽に参加してください！！(所要時間:90分程度)",
     dateName: "ハンズオン日程",
-    date: ["2023/4/7(金) 15:00～16:40", "2023/5/3(水) 15:00～16:40"],
-    formName: "Python基礎文法フォーム",
-    formUrl: "https://t.co/HY1oeKsRls",
+    date: ["2024/4/4(木) 16:00~17:30", "2024/4/20(土) 10:00~11:30"],
+    formName: "Python基礎文法 参加申込フォーム",
+    formUrl: "https://forms.gle/aKpSHbi5xdSFu9dd6",
     image: "/images/events/events_lt.svg",
     alt: "ハンズオン | Python基礎文法のイメージ画像",
   },
   {
-    title: "ハンズオン | Data Science基礎",
-    subTitle: "(オフライン)",
-    content: "Pythonを用いて、kaggleというプラットフォームのチュートリアル(Titanic)で、機械学習についての説明をプログラミング未経験者向けに、オフラインで行います。興味のある人は気軽に参加してください!! (所要時間:100分程度)",
+    title: "ハンズオン | Webページ作成体験会",
+    subTitle: "(オンライン)",
+    content: "プログラミング未経験者向けのWebページ作成体験会を開催します！言語はHTML,CSS,JavaScriptを学べます！Webページ作成やフロントエンドに興味のある人は気軽に参加してください!! (所要時間:90分程度)",
     dateName: "ハンズオン日程",
-    date: ["2023/4/13(木) 15:05~16:45", "2023/4/29(土) 14:00~15:40"],
-    formName: "Data Science基礎フォーム",
-    formUrl: "https://forms.gle/hrw78e46vXHmoVdR6",
+    date: ["2024/4/7(日) 10:00-11:30", "2024/5/11(土)10:00-11:30"],
+    formName: "Webページ作成体験会 参加申込フォーム",
+    formUrl: "https://forms.gle/ykYTkxyPxVNXzQuc7",
     image: "/images/events/events_offline.svg",
-    alt: "ハンズオン | データサイエンス体験のイメージ画像",
+    alt: "ハンズオン | Webページ作成体験会のイメージ画像",
   },
 ];
 
