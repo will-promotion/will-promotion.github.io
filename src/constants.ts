@@ -365,8 +365,8 @@ export const EVENTS = [
     image: "/images/events/events_offline.svg",
     alt: "ハンズオン | Webページ作成体験会のイメージ画像",
   },
-];
 */
+];
 
 // FAQ
 export const FAQ = [
