@@ -20,13 +20,6 @@ jobs:
       - name: Build site using Astro
         uses: withastro/action@v2
 
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./dist
-          # ここは必ず github-pages にすること
-          name: github-pages
-
   deploy:
     runs-on: ubuntu-latest
     needs: build
