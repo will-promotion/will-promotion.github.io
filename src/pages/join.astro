@@ -43,13 +43,13 @@ const title = "入会方法";
       <div class="join__btn-box">
         <h3>説明会参加フォーム</h3>
         <a href="https://t.co/xqtDzHaGZU" target="_blank" rel="noopener noreferrer">
-          説明会参加フォームはこちら
+          説明会参加フォームへ
         </a>
       </div>
 
-      <div class="join__btn-box">
+      <div class="join__button">
         <h3>新歓説明会日程</h3>
-        <a href="/events">詳細は新歓イベントページへ</a>
+        <a href="/events">新歓イベントページへ</a>
       </div>
     </div>
   </section>
@@ -176,6 +176,33 @@ const title = "入会方法";
 
   .join__btn-box > p {
     text-align: center;
+  }
+
+  .join__button {
+    margin: 80px auto 0;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    text-align: center;
+  }
+
+  .join__button a {
+    display: block;
+    padding: 20px 40px;
+    border: 1px solid #644529;
+    border-radius: 50px;
+    transition: all 500ms;
+    color: #644529;
+  }
+
+  .join__button a:hover {
+    background-color: #644529;
+    color: #ffffff;
+  }
+
+  .join__button span {
+    display: inline-block;
+    margin-left: 20px;
   }
 
   .join__container {
