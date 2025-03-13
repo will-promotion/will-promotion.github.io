@@ -49,7 +49,7 @@ const title = "入会方法";
 
       <div class="join__button">
         <h3>新歓説明会日程</h3>
-        <a href="/events">新歓イベントページへ</a>
+        <a href="/events">新歓イベントページ<span>&rang;&rang;</span></a>
       </div>
     </div>
   </section>
@@ -82,7 +82,7 @@ const title = "入会方法";
     color: #41475a;
   }
 
-  a {
+  .join__btn-box > a {
     color: #b5c97c;
     display: block;
     width: -webkit-fit-content;
@@ -95,16 +95,16 @@ const title = "入会方法";
     transition: 0.7s;
   }
 
-  a:hover {
+  .join__btn-box > a:hover {
     color: #f7c8da;
     border: 2px solid transparent;
   }
 
-  a:hover::before, a:hover::after {
+  .join__btn-box > a:hover::before, a:hover::after {
     transform: scale(1);
   }
 
-  a::before, a::after {
+  .join__btn-box > a::before, a::after {
     content: "";
     width: 100%;
     height: 100%;
@@ -117,13 +117,13 @@ const title = "入会方法";
     transition: 0.7s;
   }
 
-  a::before {
+  .join__btn-box > a::before {
     border-bottom: 2px solid #f7c8da;
     border-left: 2px solid #f7c8da;
     transform-origin: 100% 0%;
   }
 
-  a::after {
+  .join__btn-box > a::after {
     border-top: 2px solid #f7c8da;
     border-right: 2px solid #f7c8da;
     transform-origin: 0% 100%;
@@ -187,6 +187,7 @@ const title = "入会方法";
   }
 
   .join__button a {
+    font-size: 1.0rem;
     display: block;
     border: 1px solid #644529;
     border-radius: 50px;
