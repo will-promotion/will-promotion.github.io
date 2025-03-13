@@ -214,8 +214,14 @@ export const PG_ACT = [
   },
 */
   {
+    title: "ゼミクラスタ",
+    content: "ゼミクラスタとは、学生が主体的に学び、交流できる学習コミュニティです。オンラインオフィス「Gather」を活用した、自由な学びの場となっています。「決められた学習」ではなく、「学びたい人が集まる場」として、熱量の高い学習体験を実現します。",
+    image: "/images/about/about_pgrit.svg",
+    alt: "PGritのイメージ画像",
+  },
+  {
     title: "PGrit",
-    content: "PGrit（グリット）とは、PlayGroundに所属する人たちが集うTwitterライクなSNSです。ここでは、Twitter同様に日常のことを呟いたり、技術的な発信をしたり、質問や課題提出など広い範囲で使用します。PlayGroundではこのPGritを通して多くの人と関わることができます。",
+    content: "PGrit（グリット）とは、PlayGroundに所属する人たちが集うX（旧Twitter）ライクなSNSです。ここでは、X同様に日常のことを呟いたり、技術的な発信をしたり、質問や課題提出など広い範囲で使用します。PlayGroundではこのPGritを通して多くの人と関わることができます。",
     image: "/images/about/about_pgrit.svg",
     alt: "PGritのイメージ画像",
   },
