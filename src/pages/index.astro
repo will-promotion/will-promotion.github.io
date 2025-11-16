@@ -1,9 +1,9 @@
 ---
-import Chart from '../components/Chart.astro';
-import Hero from '../components/Hero.astro';
-import Layout from '../layouts/Layout.astro';
-import WelcomePopup from '../components/WelcomePopup';
-import '../styles/global.css';
+import Chart from "../components/Chart.astro";
+import Hero from "../components/Hero.astro";
+import Layout from "../layouts/Layout.astro";
+import WelcomePopup from "../components/WelcomePopup";
+import "../styles/global.css";
 ---
 
 <Layout>
@@ -48,7 +48,9 @@ import '../styles/global.css';
             alt="人々が笑顔になる様子を表したベクター画像"
           />
         </div>
-        <p>帰属している人たちの自発的な行動に寛容であり続ける。人との輪を大切にする。</p>
+        <p>
+          帰属している人たちの自発的な行動に寛容であり続ける。人との輪を大切にする。
+        </p>
       </div>
     </div>
   </section>
@@ -61,9 +63,7 @@ import '../styles/global.css';
       <p>
         PlayGroundとは、株式会社Shinonomeが設立したコミュニティーで、世の中に革新を起こすテクノロジー存在の「巣」です。大学で享受できる網羅的な知識と社会で求められる実践的な技術のギャップを解消すべく、全国の大学や自治体と連携し、学内やその周辺に無料で学べる教育機関を設置し、学生を対象に成長・挑戦の機会を提供しています。WILLではそのPlayGroundに参画し、プログラミングを学習するだけでなく多様な人と関わり合うことで、エンジニアとしての総合的な素養を身につけることができます。
       </p>
-      <a href="/about" class="button"
-        >VIEW MORE<span>&rang;&rang;</span></a
-      >
+      <a href="/about" class="button">VIEW MORE<span>&rang;&rang;</span></a>
     </div>
   </section>
 
@@ -72,14 +72,21 @@ import '../styles/global.css';
   <WelcomePopup client:load>
     <h2>WILLへようこそ！</h2>
     <p>
-      WILLは、2020年8月に設立された早稲田大学ITサークル（WASEDA IT Leader Lab）です。
+      WILLは、2020年8月に設立された早稲田大学ITサークル（WASEDA IT Leader
+      Lab）です。
       ITを学習するPlayGroundというコミュニティに参加し、プログラミングやデザインの学びを提供しています。
     </p>
     <h3>私たちの目標</h3>
     <ul>
-      <li>・学生のうちからプログラミングというツールを通して、社会人や社会活動に触れる</li>
-      <li>・サークル活動としての経験を積む。人とタテ・ヨコの繋がりを作り、組織人としての経験を積む</li>
-      <li>・帰属している人たちの自発的な行動に寛容であり続ける。人との輪を大切にする</li>
+      <li>
+        ・学生のうちからプログラミングというツールを通して、社会人や社会活動に触れる
+      </li>
+      <li>
+        ・サークル活動としての経験を積む。人とタテ・ヨコの繋がりを作り、組織人としての経験を積む
+      </li>
+      <li>
+        ・帰属している人たちの自発的な行動に寛容であり続ける。人との輪を大切にする
+      </li>
     </ul>
   </WelcomePopup>
 </Layout>
@@ -137,8 +144,8 @@ import '../styles/global.css';
 
   @media screen and (max-width: 1000px) {
     .intro h3 {
-        text-align: left;
-      }
+      text-align: left;
+    }
   }
 
   @media screen and (max-width: 1110px) {

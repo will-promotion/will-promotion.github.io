@@ -1,7 +1,7 @@
 ---
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
-import { SITE_DESCRIPTION,SITE_TITLE } from "../constants";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../constants";
 
 type Props = {
   title?: string;
@@ -16,7 +16,7 @@ const url = "https://will-promotion.netlify.app/";
 const ogImage = new URL("/images/will-ogp.jpg", Astro.url);
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
   <head>
     <meta charset="UTF-8" />
@@ -34,7 +34,9 @@ const ogImage = new URL("/images/will-ogp.jpg", Astro.url);
 
     <title>{titleContent}</title>
     <link rel="shortcut icon" href="/will-fav.ico" type="image/ico" />
-    <script src="https://kit.fontawesome.com/e3d049ce0d.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/e3d049ce0d.js"
+      crossorigin="anonymous"></script>
   </head>
   <body>
     <Header>

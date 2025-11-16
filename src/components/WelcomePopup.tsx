@@ -1,33 +1,36 @@
-import { useEffect, useState } from 'react';
-import type { ReactNode } from 'react';
+import { useEffect, useState } from "react";
+import type { ReactNode } from "react";
 
 interface WelcomePopupProps {
   children: ReactNode;
   id?: string;
 }
 
-export default function WelcomePopup({ children, id = 'welcome-popup' }: WelcomePopupProps) {
+export default function WelcomePopup({
+  children,
+  id = "welcome-popup",
+}: WelcomePopupProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [hasShown, setHasShown] = useState(false);
 
   useEffect(() => {
     // 初回訪問時のみ表示（localStorageで管理）
-    const hasSeenPopup = localStorage.getItem('hasSeenWelcomePopup');
-    
+    const hasSeenPopup = localStorage.getItem("hasSeenWelcomePopup");
+
     if (!hasSeenPopup) {
       // ページ読み込み後に少し遅延させて表示
       const timer = setTimeout(() => {
         setIsOpen(true);
         setHasShown(true);
       }, 500);
-      
+
       return () => clearTimeout(timer);
     }
   }, []);
 
   const handleClose = () => {
     setIsOpen(false);
-    localStorage.setItem('hasSeenWelcomePopup', 'true');
+    localStorage.setItem("hasSeenWelcomePopup", "true");
   };
 
   const handleOverlayClick = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -42,7 +45,7 @@ export default function WelcomePopup({ children, id = 'welcome-popup' }: Welcome
 
   return (
     <div
-      className={`welcome-popup-overlay ${isOpen ? 'is-open' : ''}`}
+      className={`welcome-popup-overlay ${isOpen ? "is-open" : ""}`}
       onClick={handleOverlayClick}
       aria-hidden={!isOpen}
     >
@@ -59,11 +62,8 @@ export default function WelcomePopup({ children, id = 'welcome-popup' }: Welcome
             onClick={handleClose}
           ></button>
         </header>
-        <main className="welcome-popup-content">
-          {children}
-        </main>
+        <main className="welcome-popup-content">{children}</main>
       </div>
     </div>
   );
 }
-
