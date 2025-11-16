@@ -479,3 +479,144 @@ li {
   color: #ffffff;
   background-color: #644529;
 }
+
+/* Welcome Popup Styles */
+.welcome-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: welcomeFadeIn 0.3s cubic-bezier(0, 0, 0.2, 1);
+}
+
+.welcome-popup-container {
+  background-color: #fff;
+  padding: 30px;
+  max-width: 900px;
+  width: 90%;
+  max-height: 90vh;
+  border-radius: 4px;
+  overflow-y: auto;
+  box-sizing: border-box;
+  animation: welcomeSlideIn 0.3s cubic-bezier(0, 0, 0.2, 1);
+  position: relative;
+}
+
+.welcome-popup-header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.welcome-popup-close {
+  background: transparent;
+  border: 0;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #41475a;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s;
+}
+
+.welcome-popup-close::before {
+  content: "✕";
+}
+
+.welcome-popup-close:hover {
+  color: #00449e;
+}
+
+.welcome-popup-content {
+  color: #41475a;
+}
+
+.welcome-popup-content h2 {
+  font-weight: 600;
+  font-size: 1.25rem;
+  line-height: 1.25;
+  color: #00449e;
+  margin-bottom: 1rem;
+}
+
+.welcome-popup-content h3 {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 1.1;
+  letter-spacing: 0;
+  color: #41475a;
+}
+
+.welcome-popup-content p {
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.6;
+  letter-spacing: 0;
+  color: #41475a;
+}
+
+.welcome-popup-content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.welcome-popup-content li {
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.8;
+  letter-spacing: 0;
+  color: #41475a;
+}
+
+@keyframes welcomeFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes welcomeSlideIn {
+  from {
+    transform: translateY(15%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .welcome-popup-container {
+    padding: 20px;
+    width: 95%;
+  }
+
+  .welcome-popup-content h2 {
+    font-size: 1.125rem;
+  }
+
+  .welcome-popup-content h3 {
+    font-size: 1.25rem;
+  }
+
+  .welcome-popup-content p,
+  .welcome-popup-content li {
+    font-size: 0.9375rem;
+  }
+}

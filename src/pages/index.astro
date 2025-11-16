@@ -2,6 +2,7 @@
 import Chart from '../components/Chart.astro';
 import Hero from '../components/Hero.astro';
 import Layout from '../layouts/Layout.astro';
+import WelcomePopup from '../components/WelcomePopup';
 import '../styles/global.css';
 ---
 
@@ -67,6 +68,20 @@ import '../styles/global.css';
   </section>
 
   <Chart />
+
+  <WelcomePopup client:load>
+    <h2>WILLへようこそ！</h2>
+    <p>
+      WILLは、2020年8月に設立された早稲田大学ITサークル（WASEDA IT Leader Lab）です。
+      ITを学習するPlayGroundというコミュニティに参加し、プログラミングやデザインの学びを提供しています。
+    </p>
+    <h3>私たちの目標</h3>
+    <ul>
+      <li>・学生のうちからプログラミングというツールを通して、社会人や社会活動に触れる</li>
+      <li>・サークル活動としての経験を積む。人とタテ・ヨコの繋がりを作り、組織人としての経験を積む</li>
+      <li>・帰属している人たちの自発的な行動に寛容であり続ける。人との輪を大切にする</li>
+    </ul>
+  </WelcomePopup>
 </Layout>
 
 <style>
