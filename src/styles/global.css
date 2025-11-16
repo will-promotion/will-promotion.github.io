@@ -499,15 +499,16 @@ li {
 
 .welcome-popup-container {
   background-color: #fff;
-  padding: 30px;
-  max-width: 900px;
+  padding: 40px;
+  max-width: 700px;
   width: 90%;
   max-height: 90vh;
-  border-radius: 12px;
+  border-radius: 16px;
   overflow-y: auto;
   box-sizing: border-box;
   animation: welcomeSlideIn 0.3s cubic-bezier(0, 0, 0.2, 1);
   position: relative;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
 }
 
 .welcome-popup-header {
@@ -538,35 +539,88 @@ li {
   margin-bottom: 1rem;
 }
 
+.welcome-popup-title-wrapper {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #00449e;
+}
+
 .welcome-popup-content h3 {
-  margin-top: 1.5rem;
-  margin-bottom: 1rem;
-  font-weight: 500;
-  font-size: 1.5rem;
-  line-height: 1.1;
+  margin: 0;
+  font-weight: 600;
+  font-size: 1.75rem;
+  line-height: 1.2;
   letter-spacing: 0;
-  color: #41475a;
+  color: #00449e;
+}
+
+.welcome-popup-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
 }
 
 .welcome-popup-content p {
-  font-weight: 500;
-  font-size: 1rem;
-  line-height: 1.6;
-  letter-spacing: 0;
-  color: #41475a;
-}
-
-.welcome-popup-content ul {
-  list-style: none;
-  padding: 0;
-}
-
-.welcome-popup-content li {
+  margin: 0;
   font-weight: 500;
   font-size: 1rem;
   line-height: 1.8;
   letter-spacing: 0;
   color: #41475a;
+}
+
+.welcome-popup-content p strong {
+  color: #00449e;
+  font-weight: 600;
+}
+
+.welcome-popup-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.welcome-popup-link-button {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+  background-color: #f8f9fa;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  color: #00449e;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9375rem;
+  transition: all 0.2s ease;
+}
+
+.welcome-popup-link-button:hover {
+  background-color: #e8f0f8;
+  color: #00449e;
+  border-color: #00449e;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 68, 158, 0.15);
+}
+
+.welcome-popup-link-icon {
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.welcome-popup-link-button span:not(.welcome-popup-link-icon):not(.welcome-popup-link-arrow) {
+  flex: 1;
+}
+
+.welcome-popup-link-arrow {
+  font-size: 1.125rem;
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+}
+
+.welcome-popup-link-button:hover .welcome-popup-link-arrow {
+  transform: translateX(4px);
 }
 
 @keyframes welcomeFadeIn {
@@ -591,20 +645,24 @@ li {
 
 @media screen and (max-width: 767px) {
   .welcome-popup-container {
-    padding: 20px;
+    padding: 24px;
     width: 95%;
   }
 
-  .welcome-popup-content h2 {
-    font-size: 1.125rem;
-  }
-
   .welcome-popup-content h3 {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
   }
 
-  .welcome-popup-content p,
-  .welcome-popup-content li {
+  .welcome-popup-content p {
     font-size: 0.9375rem;
+  }
+
+  .welcome-popup-link-button {
+    padding: 0.875rem 1rem;
+    font-size: 0.875rem;
+  }
+
+  .welcome-popup-link-icon {
+    font-size: 1.125rem;
   }
 }
