@@ -503,7 +503,7 @@ li {
   max-width: 900px;
   width: 90%;
   max-height: 90vh;
-  border-radius: 4px;
+  border-radius: 12px;
   overflow-y: auto;
   box-sizing: border-box;
   animation: welcomeSlideIn 0.3s cubic-bezier(0, 0, 0.2, 1);
@@ -520,24 +520,10 @@ li {
 .welcome-popup-close {
   background: transparent;
   border: 0;
-  font-size: 1.5rem;
-  cursor: pointer;
-  color: #41475a;
-  padding: 0;
-  width: 30px;
-  height: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: color 0.2s;
 }
 
-.welcome-popup-close::before {
+.welcome-popup-header .welcome-popup-close::before {
   content: "✕";
-}
-
-.welcome-popup-close:hover {
-  color: #00449e;
 }
 
 .welcome-popup-content {

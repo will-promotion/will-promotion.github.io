@@ -99,3 +99,19 @@ import { PAGE_LINKS } from "../constants";
     }
   }
 </style>
+
+<script>
+  window.addEventListener("DOMContentLoaded", function () {
+    // フッターのTOPリンクをクリックした場合は、ポップアップを表示しないフラグを設定
+    const footerLinks =
+      document.querySelectorAll<HTMLAnchorElement>(".footer nav a");
+    footerLinks.forEach((link) => {
+      link.addEventListener("click", function () {
+        const href = link.getAttribute("href");
+        if (href === "/") {
+          sessionStorage.setItem("skipWelcomePopup", "true");
+        }
+      });
+    });
+  });
+</script>

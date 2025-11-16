@@ -188,6 +188,19 @@ import { PAGE_LINKS } from "../constants";
           burger.classList.remove("active");
           nav.classList.remove("panelactive");
         }
+        // TOPリンクをクリックした場合は、ポップアップを表示しないフラグを設定
+        const href = item[i].getAttribute("href");
+        if (href === "/") {
+          sessionStorage.setItem("skipWelcomePopup", "true");
+        }
+      });
+    }
+
+    // ヘッダーのロゴ（WILL）をクリックした場合も同様に処理
+    const headerIcon = document.querySelector<HTMLElement>(".header__icon");
+    if (headerIcon) {
+      headerIcon.addEventListener("click", function () {
+        sessionStorage.setItem("skipWelcomePopup", "true");
       });
     }
   });

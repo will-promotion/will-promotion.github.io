@@ -11,26 +11,26 @@ export default function WelcomePopup({
   id = "welcome-popup",
 }: WelcomePopupProps) {
   const [isOpen, setIsOpen] = useState(false);
-  const [hasShown, setHasShown] = useState(false);
 
   useEffect(() => {
-    // 初回訪問時のみ表示（localStorageで管理）
-    const hasSeenPopup = localStorage.getItem("hasSeenWelcomePopup");
-
-    if (!hasSeenPopup) {
-      // ページ読み込み後に少し遅延させて表示
-      const timer = setTimeout(() => {
-        setIsOpen(true);
-        setHasShown(true);
-      }, 500);
-
-      return () => clearTimeout(timer);
+    // ナビゲーションからTOPを選択した場合は表示しない
+    const skipPopup = sessionStorage.getItem("skipWelcomePopup");
+    if (skipPopup === "true") {
+      // フラグをクリア（次回のリロード時には表示されるように）
+      sessionStorage.removeItem("skipWelcomePopup");
+      return;
     }
+
+    // ページ読み込み後に少し遅延させて表示
+    const timer = setTimeout(() => {
+      setIsOpen(true);
+    }, 500);
+
+    return () => clearTimeout(timer);
   }, []);
 
   const handleClose = () => {
     setIsOpen(false);
-    localStorage.setItem("hasSeenWelcomePopup", "true");
   };
 
   const handleOverlayClick = (e: React.MouseEvent<HTMLDivElement>) => {
