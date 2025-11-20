@@ -1,6 +1,7 @@
 ---
 import { CHART_DATA } from "../constants";
 ---
+
 <section class="member">
   <h2>構成人数・学部</h2>
   <div class="member__container">
@@ -8,9 +9,11 @@ import { CHART_DATA } from "../constants";
       CHART_DATA.map(({ title, name }) => (
         <div class="member__item">
           <h3>{title}</h3>
-          <p class={`member__${name}`}><span>全体</span>53<span>人</span></p>
+          <p class={`member__${name}`}>
+            <span>全体</span>53<span>人</span>
+          </p>
           <div class="member__canvas">
-            <canvas id={name} width="450" height="225"></canvas>
+            <canvas id={name} width="450" height="225" />
           </div>
         </div>
       ))
@@ -111,7 +114,14 @@ import { CHART_DATA } from "../constants";
 
 <script>
   import Chart from "chart.js/auto";
-  import { departmentData,departmentOptions,genderData,options,universityData,yearsData } from "../constants";
+  import {
+    departmentData,
+    departmentOptions,
+    genderData,
+    options,
+    universityData,
+    yearsData,
+  } from "../constants";
 
   const years = document.getElementById("years") as HTMLCanvasElement;
   new Chart(years, {

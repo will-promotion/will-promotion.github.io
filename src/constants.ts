@@ -1,4 +1,4 @@
-import type { ChartData, ChartOptions } from 'chart.js';
+import type { ChartData, ChartOptions } from "chart.js";
 
 export const SITE_TITLE = "WILL新歓HP | WILL【公式サイト】";
 export const SITE_DESCRIPTION =
@@ -14,7 +14,7 @@ export const PAGE_LINKS = <const>[
     enTitle: "ABOUT US",
     href: "/about",
   },
-/* 
+  /* 
   {
     title: "コース説明",
     enTitle: "COURSES",
@@ -41,7 +41,10 @@ export const PAGE_LINKS = <const>[
 // Chart
 const tooltip = {
   callbacks: {
-    label: (tooltipItem: { dataset: { data: { [x: string]: any; }; }; dataIndex: string | number; }) => {
+    label: (tooltipItem: {
+      dataset: { data: { [x: string]: any } };
+      dataIndex: string | number;
+    }) => {
       const value = tooltipItem.dataset.data[tooltipItem.dataIndex];
       return `${value}`;
     },
@@ -56,21 +59,21 @@ const legend: any = {
     boxWidth: 20,
     boxHeight: 20,
     font: {
-      size:18
+      size: 18,
     },
   },
 };
 
 export const options: ChartOptions<"doughnut"> = {
   rotation: 0,
-  cutout: '70%',
+  cutout: "70%",
   plugins: {
     legend: legend,
     tooltip: tooltip,
-  }
+  },
 };
 
-export const yearsData: ChartData<'doughnut'> = {
+export const yearsData: ChartData<"doughnut"> = {
   labels: ["1年 2人", "2年 10人", "3年 21人", "4年 15人", "修士など 5名"],
   datasets: [
     {
@@ -80,7 +83,7 @@ export const yearsData: ChartData<'doughnut'> = {
   ],
 };
 
-export const genderData: ChartData<'doughnut'> = {
+export const genderData: ChartData<"doughnut"> = {
   labels: ["男子 38人", "女子 15人"],
   datasets: [
     {
@@ -90,7 +93,7 @@ export const genderData: ChartData<'doughnut'> = {
   ],
 };
 
-export const universityData: ChartData<'doughnut'> = {
+export const universityData: ChartData<"doughnut"> = {
   labels: ["早稲田 52人", "他大 1人"],
   datasets: [
     {
@@ -100,7 +103,7 @@ export const universityData: ChartData<'doughnut'> = {
   ],
 };
 
-export const departmentData: ChartData<'doughnut'> = {
+export const departmentData: ChartData<"doughnut"> = {
   labels: [
     "政経 1人",
     "法 2人",
@@ -115,7 +118,7 @@ export const departmentData: ChartData<'doughnut'> = {
     "先進 2人",
     "人科 2人",
     "スポ科 0人",
-    "他大 1人"
+    "他大 1人",
   ],
   datasets: [
     {
@@ -141,11 +144,11 @@ export const departmentData: ChartData<'doughnut'> = {
 
 export const departmentOptions: ChartOptions<"doughnut"> = {
   rotation: -3.3,
-  cutout: '70%',
+  cutout: "70%",
   plugins: {
     legend: legend,
     tooltip: tooltip,
-  }
+  },
 };
 
 export const CHART_DATA = [
@@ -179,25 +182,29 @@ export const CHART_DATA = [
 export const WILL_ACT = [
   {
     title: "Wheel-Up",
-    content: "学期中の対面での活動としては、Wheel-Upプロジェクトが行われています。プロジェクトは5~7月、10~12月の2期/年で開催され、先輩メンバー2名、後輩メンバー3~5名ほどでチームを組み、毎週ITに関する講義に加えて、作業会やレクリエーションを行い交流を深めます。",
+    content:
+      "学期中の対面での活動としては、Wheel-Upプロジェクトが行われています。プロジェクトは5~7月、10~12月の2期/年で開催され、先輩メンバー2名、後輩メンバー3~5名ほどでチームを組み、毎週ITに関する講義に加えて、作業会やレクリエーションを行い交流を深めます。",
     image: "/images/about/about_will_.svg",
     alt: "Wheel-Upのイメージ画像",
   },
   {
     title: "月1レク",
-    content: "WILLでは、月に1度の頻度で対面での交流会を行っています。スポッチャや花火をしたり、ハロウィーンの日に一緒にご飯食べたり、クリスマスマーケット行ったりするなど、普段オンラインでの学習がメインの中でも月1度は対面でメンバー同士の交流を図っています。",
+    content:
+      "WILLでは、月に1度の頻度で対面での交流会を行っています。スポッチャや花火をしたり、ハロウィーンの日に一緒にご飯食べたり、クリスマスマーケット行ったりするなど、普段オンラインでの学習がメインの中でも月1度は対面でメンバー同士の交流を図っています。",
     image: "/images/about/about_will_rec.svg",
     alt: "月1レクのイメージ画像",
   },
   {
     title: "定例交流会（オンライン）",
-    content: "WILLでは、週1回、現在は水曜日21:00～22:00にオンライン定例会を行っています。セットアップやWILLの学習でつまずいたところを相談したり雑談したり、学部や学年を越えた交流ができます。",
+    content:
+      "WILLでは、週1回、現在は水曜日21:00～22:00にオンライン定例会を行っています。セットアップやWILLの学習でつまずいたところを相談したり雑談したり、学部や学年を越えた交流ができます。",
     image: "/images/about/about_will_mtg.svg",
     alt: "定例交流会（オンライン）のイメージ画像",
   },
   {
     title: "運営部",
-    content: "運営部の活動は、毎週のミーティングを軸としており、WILLのイベントやこれからについて、WILLがもっとよくなるような活動が行われています。",
+    content:
+      "運営部の活動は、毎週のミーティングを軸としており、WILLのイベントやこれからについて、WILLがもっとよくなるような活動が行われています。",
     image: "/images/about/about_will_operation.svg",
     alt: "WILL運営部のイメージ画像",
   },
@@ -205,7 +212,7 @@ export const WILL_ACT = [
 
 // PGの活動紹介
 export const PG_ACT = [
-/*
+  /*
   {
     title: "定例会",
     content: "PlayGroundでは、各コース参加者は週1回の頻度で集まり、学習について相談したり、LT形式の勉強会やレクを行って交流を深めています。コース受講者と修了者、案件参加中の方などが集まるので、勉強する中で分からないことがあったら随時質問できます。定例会の日程はコースにより異なります。",
@@ -215,17 +222,19 @@ export const PG_ACT = [
 */
   {
     title: "ゼミクラスタ",
-    content: "ゼミクラスタとは、学生が主体的に学び、交流できる学習コミュニティです。オンラインオフィス「Gather」を活用した、自由な学びの場となっています。「決められた学習」ではなく、「学びたい人が集まる場」として、熱量の高い学習体験を実現します。",
+    content:
+      "ゼミクラスタとは、学生が主体的に学び、交流できる学習コミュニティです。オンラインオフィス「Gather」を活用した、自由な学びの場となっています。「決められた学習」ではなく、「学びたい人が集まる場」として、熱量の高い学習体験を実現します。",
     image: "/images/about/about_pgrit.svg",
     alt: "PGritのイメージ画像",
   },
   {
     title: "PGrit",
-    content: "PGrit（グリット）とは、PlayGroundに所属する人たちが集うX（旧Twitter）ライクなSNSです。ここでは、X同様に日常のことを呟いたり、技術的な発信をしたり、質問や課題提出など広い範囲で使用します。PlayGroundではこのPGritを通して多くの人と関わることができます。",
+    content:
+      "PGrit（グリット）とは、PlayGroundに所属する人たちが集うX（旧Twitter）ライクなSNSです。ここでは、X同様に日常のことを呟いたり、技術的な発信をしたり、質問や課題提出など広い範囲で使用します。PlayGroundではこのPGritを通して多くの人と関わることができます。",
     image: "/images/about/about_pgrit.svg",
     alt: "PGritのイメージ画像",
   },
-/*
+  /*
   {
     title: "Dawn",
     content: "PlayGroundでは、コース定例会や勉強会、交流会、イベント、案件の開発や作業会などにDawn（ドーン）を用います。Dawnとは、PlayGroundで作成されたバーチャルオフィスサービスです。バーチャルオフィス内では、多様な部屋を作成することができ、各部屋は、最大16名のビデオ通話やチャットが可能です。新入生部屋などもあり、新入生同士で集まって交流する風景をよく見かけます。",
@@ -235,7 +244,8 @@ export const PG_ACT = [
 */
   {
     title: "ハッカソン",
-    content: "PlayGroundでは定期的にハッカソンが開催されています。ハッカソンとは短期間で集中的にサービスを開発するコンペティションのようなものです。中には実際にサービスとしてローンチ(公開)できるのではないかと言われるぐらいレベルの高い成果物を作り上げるチームもあり、毎回白熱します。毎年1~2回ほど開催されています。",
+    content:
+      "PlayGroundでは定期的にハッカソンが開催されています。ハッカソンとは短期間で集中的にサービスを開発するコンペティションのようなものです。中には実際にサービスとしてローンチ(公開)できるのではないかと言われるぐらいレベルの高い成果物を作り上げるチームもあり、毎回白熱します。毎年1~2回ほど開催されています。",
     image: "/images/about/about_hackathon.svg",
     alt: "ハッカソンのイメージ画像",
   },
@@ -337,19 +347,20 @@ export const EVENTS = [
   {
     title: "新歓説明会",
     subTitle: "(対面/オンライン)",
-    content: "新歓期に開催する特別なオンライン説明会です！WILLの活動やビジョン、入会方法についてお話します！質問や相談なども受け付けているので、少しでも気になった方はぜひお申し込みください！",
+    content:
+      "新歓期に開催する特別なオンライン説明会です！WILLの活動やビジョン、入会方法についてお話します！質問や相談なども受け付けているので、少しでも気になった方はぜひお申し込みください！",
     dateName: "説明会日程",
     date: [
       "2025/05/14(水) 10:00〜11:00 オンライン（Zoom予定）",
       "2025/05/22(木) 10:00〜11:00 オンライン（Zoom予定）",
-      "2025/05/28(水) 10:00〜11:00 オンライン（Zoom予定）"
+      "2025/05/28(水) 10:00〜11:00 オンライン（Zoom予定）",
     ],
     formName: "新歓説明会フォーム",
     formUrl: "https://t.co/xqtDzHaGZU",
     image: "/images/events/events_online.svg",
     alt: "説明会のイメージ画像",
   },
-/*
+  /*
   {
     title: "ハンズオン | Python基礎文法",
     subTitle: "(オンライン)",
@@ -380,16 +391,19 @@ export const FAQ = [
   {
     question: "入会費/年会費はありますか？",
     answer: "入会費/年会費はありません。",
-    subAnswer: "WILLが参加するPlayGroundにおいても、無料でIT/プログラミングの学習やサポートを受けることができます。",
+    subAnswer:
+      "WILLが参加するPlayGroundにおいても、無料でIT/プログラミングの学習やサポートを受けることができます。",
   },
   {
     question: "早稲田大学の学生じゃなくても入れますか？",
     answer: "もちろん歓迎です！",
-    subAnswer: "WILLは早稲田大学を拠点に置いてますが、他大学の方でも大丈夫です。",
+    subAnswer:
+      "WILLは早稲田大学を拠点に置いてますが、他大学の方でも大丈夫です。",
   },
   {
     question: "他サークルなどとの掛け持ちでも大丈夫ですか？",
     answer: "可能です！",
-    subAnswer: "可能ですが、PlayGroundでの案件にアサインされている期間は、優先的に時間を割いていただく必要があります。（目安：10時間/週）",
+    subAnswer:
+      "可能ですが、PlayGroundでの案件にアサインされている期間は、優先的に時間を割いていただく必要があります。（目安：10時間/週）",
   },
 ];

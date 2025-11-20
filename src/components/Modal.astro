@@ -8,11 +8,8 @@ type Props = {
 
 const { id, title, learnings, content } = Astro.props;
 ---
-<div
-  class="modal micromodal-slide"
-  id={id}
-  aria-hidden="true"
->
+
+<div class="modal micromodal-slide" id={id} aria-hidden="true">
   <div class="modal__overlay" tabindex="-1" data-micromodal-close>
     <div
       class="modal__container"
@@ -25,15 +22,12 @@ const { id, title, learnings, content } = Astro.props;
         <button
           class="modal__close"
           aria-label="Close modal"
-          data-micromodal-close
-        ></button>
+          data-micromodal-close></button>
       </header>
       <main class="modal__content" id={`${id}-content`}>
         <h3>習得技術</h3>
         <ul>
-          {
-            learnings.map(item => (<li>・{item}</li>))
-          }
+          {learnings.map((item) => <li>・{item}</li>)}
         </ul>
         <h3>最終成果物</h3>
         <p>{content}</p>
@@ -119,7 +113,6 @@ const { id, title, learnings, content } = Astro.props;
     margin-bottom: 2rem;
   }
 
-
   .micromodal-slide {
     display: none;
   }
@@ -128,22 +121,22 @@ const { id, title, learnings, content } = Astro.props;
     display: block;
   }
 
-  .micromodal-slide[aria-hidden=false] .modal__overlay {
+  .micromodal-slide[aria-hidden="false"] .modal__overlay {
     -webkit-animation: mmfadeIn 0.3s cubic-bezier(0, 0, 0.2, 1);
     animation: mmfadeIn 0.3s cubic-bezier(0, 0, 0.2, 1);
   }
 
-  .micromodal-slide[aria-hidden=false] .modal__container {
+  .micromodal-slide[aria-hidden="false"] .modal__container {
     -webkit-animation: mmslideIn 0.3s cubic-bezier(0, 0, 0.2, 1);
     animation: mmslideIn 0.3s cubic-bezier(0, 0, 0.2, 1);
   }
 
-  .micromodal-slide[aria-hidden=true] .modal__overlay {
+  .micromodal-slide[aria-hidden="true"] .modal__overlay {
     -webkit-animation: mmfadeOut 0.3s cubic-bezier(0, 0, 0.2, 1);
     animation: mmfadeOut 0.3s cubic-bezier(0, 0, 0.2, 1);
   }
 
-  .micromodal-slide[aria-hidden=true] .modal__container {
+  .micromodal-slide[aria-hidden="true"] .modal__container {
     -webkit-animation: mmslideOut 0.3s cubic-bezier(0, 0, 0.2, 1);
     animation: mmslideOut 0.3s cubic-bezier(0, 0, 0.2, 1);
   }
@@ -235,7 +228,7 @@ const { id, title, learnings, content } = Astro.props;
 </style>
 
 <script>
-  import MicroModal from 'micromodal';
+  import MicroModal from "micromodal";
 
   MicroModal.init();
 </script>

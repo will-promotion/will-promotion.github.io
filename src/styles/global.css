@@ -237,13 +237,13 @@ textarea {
 /**
  * Reset radio and checkbox appearance to preserve their look in iOS.
  */
-[type=checkbox] {
+[type="checkbox"] {
   -webkit-appearance: checkbox;
   -moz-appearance: checkbox;
   appearance: checkbox;
 }
 
-[type=radio] {
+[type="radio"] {
   -webkit-appearance: radio;
   -moz-appearance: radio;
   appearance: radio;
@@ -253,16 +253,16 @@ textarea {
  * Correct cursors for clickable elements.
  */
 button,
-[type=button],
-[type=reset],
-[type=submit] {
+[type="button"],
+[type="reset"],
+[type="submit"] {
   cursor: pointer;
 }
 
 button:disabled,
-[type=button]:disabled,
-[type=reset]:disabled,
-[type=submit]:disabled {
+[type="button"]:disabled,
+[type="reset"]:disabled,
+[type="submit"]:disabled {
   cursor: default;
 }
 
@@ -314,15 +314,15 @@ textarea {
 /**
  * Correct the cursor style of increment and decrement buttons in Chrome.
  */
-[type=number]::-webkit-inner-spin-button,
-[type=number]::-webkit-outer-spin-button {
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
   height: auto;
 }
 
 /**
  * 1. Correct the outline style in Safari.
  */
-[type=search] {
+[type="search"] {
   outline-offset: -2px;
   /* 1 */
 }
@@ -330,7 +330,7 @@ textarea {
 /**
  * Remove the inner padding in Chrome and Safari on macOS.
  */
-[type=search]::-webkit-search-decoration {
+[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -404,7 +404,9 @@ th {
 書式の設定
 =====================*/
 body {
-  font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
+  font-family:
+    "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium",
+    "游ゴシック", "Yu Gothic", sans-serif;
 }
 
 h2 {
@@ -478,4 +480,189 @@ li {
 .button:hover {
   color: #ffffff;
   background-color: #644529;
+}
+
+/* Welcome Popup Styles */
+.welcome-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: welcomeFadeIn 0.3s cubic-bezier(0, 0, 0.2, 1);
+}
+
+.welcome-popup-container {
+  background-color: #fff;
+  padding: 40px;
+  max-width: 700px;
+  width: 90%;
+  max-height: 90vh;
+  border-radius: 16px;
+  overflow-y: auto;
+  box-sizing: border-box;
+  animation: welcomeSlideIn 0.3s cubic-bezier(0, 0, 0.2, 1);
+  position: relative;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+}
+
+.welcome-popup-header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.welcome-popup-close {
+  background: transparent;
+  border: 0;
+}
+
+.welcome-popup-header .welcome-popup-close::before {
+  content: "✕";
+}
+
+.welcome-popup-content {
+  color: #41475a;
+}
+
+.welcome-popup-content h2 {
+  font-weight: 600;
+  font-size: 1.25rem;
+  line-height: 1.25;
+  color: #00449e;
+  margin-bottom: 1rem;
+}
+
+.welcome-popup-title-wrapper {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #00449e;
+}
+
+.welcome-popup-content h3 {
+  margin: 0;
+  font-weight: 600;
+  font-size: 1.75rem;
+  line-height: 1.2;
+  letter-spacing: 0;
+  color: #00449e;
+}
+
+.welcome-popup-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.welcome-popup-content p {
+  margin: 0;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.8;
+  letter-spacing: 0;
+  color: #41475a;
+}
+
+.welcome-popup-content p strong {
+  color: #00449e;
+  font-weight: 600;
+}
+
+.welcome-popup-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.welcome-popup-link-button {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+  background-color: #f8f9fa;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  color: #00449e;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9375rem;
+  transition: all 0.2s ease;
+}
+
+.welcome-popup-link-button:hover {
+  background-color: #e8f0f8;
+  color: #00449e;
+  border-color: #00449e;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 68, 158, 0.15);
+}
+
+.welcome-popup-link-icon {
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.welcome-popup-link-button span:not(.welcome-popup-link-icon):not(.welcome-popup-link-arrow) {
+  flex: 1;
+}
+
+.welcome-popup-link-arrow {
+  font-size: 1.125rem;
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+}
+
+.welcome-popup-link-button:hover .welcome-popup-link-arrow {
+  transform: translateX(4px);
+}
+
+@keyframes welcomeFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes welcomeSlideIn {
+  from {
+    transform: translateY(15%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .welcome-popup-container {
+    padding: 24px;
+    width: 95%;
+  }
+
+  .welcome-popup-content h3 {
+    font-size: 1.5rem;
+  }
+
+  .welcome-popup-content p {
+    font-size: 0.9375rem;
+  }
+
+  .welcome-popup-link-button {
+    padding: 0.875rem 1rem;
+    font-size: 0.875rem;
+  }
+
+  .welcome-popup-link-icon {
+    font-size: 1.125rem;
+  }
 }

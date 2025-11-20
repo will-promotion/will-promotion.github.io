@@ -1,7 +1,7 @@
 ---
-import { EVENTS } from '../constants';
-import Layout from '../layouts/Layout.astro';
-import '../styles/global.css';
+import { EVENTS } from "../constants";
+import Layout from "../layouts/Layout.astro";
+import "../styles/global.css";
 
 const title = "新歓イベント";
 ---
@@ -13,29 +13,43 @@ const title = "新歓イベント";
     </div>
     <div class="events__wrapper">
       {
-        EVENTS.map(({title, subTitle, content, dateName, date, formName, formUrl, image, alt}) => (
-          <div class="events__container">
-            <div class="events__item">
-              <h3>{title} <span>{subTitle}</span></h3>
-              <p>{content}</p>
-              <p>{dateName}</p>
-              <ul>
-                {
-                  date.map(item => (<li>・{item}</li>))
-                }
-              </ul>
-              <div class="events__btn-box">
-                <p>{formName}</p>
-                <a href={formUrl} target="_blank" rel="noopener noreferrer">
-                  フォーム申込みはこちらから
-                </a>
+        EVENTS.map(
+          ({
+            title,
+            subTitle,
+            content,
+            dateName,
+            date,
+            formName,
+            formUrl,
+            image,
+            alt,
+          }) => (
+            <div class="events__container">
+              <div class="events__item">
+                <h3>
+                  {title} <span>{subTitle}</span>
+                </h3>
+                <p>{content}</p>
+                <p>{dateName}</p>
+                <ul>
+                  {date.map((item) => (
+                    <li>・{item}</li>
+                  ))}
+                </ul>
+                <div class="events__btn-box">
+                  <p>{formName}</p>
+                  <a href={formUrl} target="_blank" rel="noopener noreferrer">
+                    フォーム申込みはこちらから
+                  </a>
+                </div>
+              </div>
+              <div class="events__img">
+                <img src={image} alt={alt} />
               </div>
             </div>
-            <div class="events__img">
-              <img src={image} alt={alt} />
-            </div>
-          </div>
-        ))
+          )
+        )
       }
     </div>
   </section>
@@ -85,11 +99,13 @@ const title = "新歓イベント";
     border: 2px solid transparent;
   }
 
-  a:hover::before, a:hover::after {
+  a:hover::before,
+  a:hover::after {
     transform: scale(1);
   }
 
-  a::before, a::after {
+  a::before,
+  a::after {
     content: "";
     width: 100%;
     height: 100%;

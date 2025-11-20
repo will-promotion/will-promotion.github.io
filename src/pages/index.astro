@@ -1,8 +1,9 @@
 ---
-import Chart from '../components/Chart.astro';
-import Hero from '../components/Hero.astro';
-import Layout from '../layouts/Layout.astro';
-import '../styles/global.css';
+import Chart from "../components/Chart.astro";
+import Hero from "../components/Hero.astro";
+import Layout from "../layouts/Layout.astro";
+import WelcomePopup from "../components/WelcomePopup";
+import "../styles/global.css";
 ---
 
 <Layout>
@@ -47,7 +48,9 @@ import '../styles/global.css';
             alt="人々が笑顔になる様子を表したベクター画像"
           />
         </div>
-        <p>帰属している人たちの自発的な行動に寛容であり続ける。人との輪を大切にする。</p>
+        <p>
+          帰属している人たちの自発的な行動に寛容であり続ける。人との輪を大切にする。
+        </p>
       </div>
     </div>
   </section>
@@ -60,13 +63,47 @@ import '../styles/global.css';
       <p>
         PlayGroundとは、株式会社Shinonomeが設立したコミュニティーで、世の中に革新を起こすテクノロジー存在の「巣」です。大学で享受できる網羅的な知識と社会で求められる実践的な技術のギャップを解消すべく、全国の大学や自治体と連携し、学内やその周辺に無料で学べる教育機関を設置し、学生を対象に成長・挑戦の機会を提供しています。WILLではそのPlayGroundに参画し、プログラミングを学習するだけでなく多様な人と関わり合うことで、エンジニアとしての総合的な素養を身につけることができます。
       </p>
-      <a href="/about" class="button"
-        >VIEW MORE<span>&rang;&rang;</span></a
-      >
+      <a href="/about" class="button">VIEW MORE<span>&rang;&rang;</span></a>
     </div>
   </section>
 
   <Chart />
+
+  <WelcomePopup client:load>
+    <div class="welcome-popup-title-wrapper">
+      <h3>最近の活動報告</h3>
+    </div>
+    <div class="welcome-popup-body">
+      <p>
+        2025年8月のプログラミングコンテストで、WILLメンバーで「<strong>ShogakuseiDailyGrowing-site (SDGsサイト)</strong>」を開発しました。
+      </p>
+      <p>
+        このアプリは、小学生が日々の「いい行い」を記録すると、AIがどのSDGs目標に貢献したかを判定しポイントが付与されるWebアプリです。
+      </p>
+      <div class="welcome-popup-links">
+        <a
+          href="https://protopedia.net/prototype/private/3b37b4fe-5169-48fc-b195-483930bab3d3"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="welcome-popup-link-button"
+        >
+          <span class="welcome-popup-link-icon">📄</span>
+          <span>作品紹介ページ（ProtoPedia）</span>
+          <span class="welcome-popup-link-arrow">→</span>
+        </a>
+        <a
+          href="https://shogakuseidailygrowing-site.onrender.com/login"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="welcome-popup-link-button"
+        >
+          <span class="welcome-popup-link-icon">🚀</span>
+          <span>アプリを試す（ログインページ）</span>
+          <span class="welcome-popup-link-arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </WelcomePopup>
 </Layout>
 
 <style>
@@ -122,8 +159,8 @@ import '../styles/global.css';
 
   @media screen and (max-width: 1000px) {
     .intro h3 {
-        text-align: left;
-      }
+      text-align: left;
+    }
   }
 
   @media screen and (max-width: 1110px) {
