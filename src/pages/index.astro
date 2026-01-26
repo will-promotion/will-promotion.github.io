@@ -69,7 +69,33 @@ import "../styles/global.css";
 
   <Chart />
 
-  <WelcomePopup client:load>
+  <WelcomePopup client:load id="new-homepage-popup" skipKey="skipNewHomepagePopup" priority={0}>
+    <div class="welcome-popup-title-wrapper">
+      <h3>新しいホームページが公開されました</h3>
+    </div>
+    <div class="welcome-popup-body">
+      <p>
+        WILLの新しいホームページを公開しました！
+      </p>
+      <p>
+        より使いやすく、より見やすく、より魅力的なデザインでWILLの活動や情報をお届けします。
+      </p>
+      <div class="welcome-popup-links">
+        <a
+          href="https://will-new-homepage-team.github.io"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="welcome-popup-link-button"
+        >
+          <span class="welcome-popup-link-icon">🏠</span>
+          <span>新しいホームページを見る</span>
+          <span class="welcome-popup-link-arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </WelcomePopup>
+
+  <WelcomePopup client:load id="activity-report-popup" skipKey="skipWelcomePopup" priority={1}>
     <div class="welcome-popup-title-wrapper">
       <h3>最近の活動報告</h3>
     </div>
