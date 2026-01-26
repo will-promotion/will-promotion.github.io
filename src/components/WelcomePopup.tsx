@@ -25,7 +25,7 @@ export default function WelcomePopup({
       return;
     }
 
-    // 優先度が0のダイアログ（新しいホームページ告知）はすぐに表示
+    // 優先度が0のダイアログはすぐに表示
     if (priority === 0) {
       const timer = setTimeout(() => {
         setIsOpen(true);
