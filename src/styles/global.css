@@ -499,7 +499,7 @@ li {
 
 .welcome-popup-container {
   background-color: #fff;
-  padding: 40px;
+  padding: 24px 40px 40px 40px;
   max-width: 700px;
   width: 90%;
   max-height: 90vh;
@@ -515,7 +515,7 @@ li {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 .welcome-popup-close {
@@ -645,7 +645,7 @@ li {
 
 @media screen and (max-width: 767px) {
   .welcome-popup-container {
-    padding: 24px;
+    padding: 16px 24px 24px 24px;
     width: 95%;
   }
 

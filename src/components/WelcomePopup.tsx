@@ -4,38 +4,69 @@ import type { ReactNode } from "react";
 interface WelcomePopupProps {
   children: ReactNode;
   id?: string;
+  skipKey?: string;
+  priority?: number; // 優先度（数値が小さいほど優先）
 }
 
 export default function WelcomePopup({
   children,
   id = "welcome-popup",
+  skipKey = "skipWelcomePopup",
+  priority = 0,
 }: WelcomePopupProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     // ナビゲーションからTOPを選択した場合は表示しない
-    const skipPopup = sessionStorage.getItem("skipWelcomePopup");
+    const skipPopup = sessionStorage.getItem(skipKey);
     if (skipPopup === "true") {
       // フラグをクリア（次回のリロード時には表示されるように）
-      sessionStorage.removeItem("skipWelcomePopup");
+      sessionStorage.removeItem(skipKey);
       return;
     }
 
-    // ページ読み込み後に少し遅延させて表示
-    const timer = setTimeout(() => {
-      setIsOpen(true);
-    }, 500);
+    // 優先度が0のダイアログ（新しいホームページ告知）はすぐに表示
+    if (priority === 0) {
+      const timer = setTimeout(() => {
+        setIsOpen(true);
+      }, 500);
+      return () => clearTimeout(timer);
+    }
 
-    return () => clearTimeout(timer);
-  }, []);
+    // 優先度が1以上のダイアログ（活動報告など）は、
+    // 優先度0のダイアログが閉じられるまで待機
+    const handleHighPriorityClosed = () => {
+      setIsOpen(true);
+    };
+
+    // カスタムイベントをリッスン
+    window.addEventListener("highPriorityPopupClosed", handleHighPriorityClosed);
+
+    // 既に優先度0のダイアログが閉じられている場合はすぐに表示
+    const highPriorityClosed = sessionStorage.getItem("skipNewHomepagePopup") === "true";
+    if (highPriorityClosed) {
+      const timer = setTimeout(() => {
+        setIsOpen(true);
+      }, 500);
+      return () => {
+        clearTimeout(timer);
+        window.removeEventListener("highPriorityPopupClosed", handleHighPriorityClosed);
+      };
+    }
+
+    return () => {
+      window.removeEventListener("highPriorityPopupClosed", handleHighPriorityClosed);
+    };
+  }, [skipKey, priority]);
 
   const handleClose = () => {
     setIsOpen(false);
-  };
-
-  const handleOverlayClick = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (e.target === e.currentTarget) {
-      handleClose();
+    // 閉じたことを記録（同じセッション中は再表示しない）
+    sessionStorage.setItem(skipKey, "true");
+    
+    // 優先度0のダイアログが閉じられた場合、優先度1以上のダイアログに通知
+    if (priority === 0) {
+      window.dispatchEvent(new CustomEvent("highPriorityPopupClosed"));
     }
   };
 
@@ -46,7 +77,6 @@ export default function WelcomePopup({
   return (
     <div
       className={`welcome-popup-overlay ${isOpen ? "is-open" : ""}`}
-      onClick={handleOverlayClick}
       aria-hidden={!isOpen}
     >
       <div
